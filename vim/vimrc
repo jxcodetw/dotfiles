@@ -1,0 +1,60 @@
+" Basic Settings
+set nu " show line number
+set laststatus=2
+set history=700
+set undolevels=700
+set nocompatible
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,big5
+set backspace=indent,eol,start " make backspace work
+set pastetoggle=<F5>
+set timeoutlen=1000 ttimeoutlen=0 " eliminating ESC delay
+set cursorline
+set list
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set t_Co=256 " 256 color
+colorscheme xoria256_modified
+let mapleader=","
+cmap wt w !sudo tee % >/dev/null
+nmap <F1> :set nu!<CR>
+nmap <F2> :set list!<CR>
+syntax on
+
+" better search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Disable backup and swap files
+set nobackup
+set nowritebackup
+set noswapfile
+
+" scaffold
+au BufNewFile *.c 0r ~/.vim/scaffold/scaffold.c
+
+" Folding
+set foldmethod=syntax
+set foldlevel=3
+set foldnestmax=3
+
+" Always tab
+set autoindent
+set noexpandtab
+set copyindent
+set preserveindent
+set tabstop=4
+set shiftwidth=4
+
+" Plugin
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'jiangmiao/auto-pairs'
+call vundle#end()
+
+let g:lightline = { 'colorscheme': 'wombat',}
