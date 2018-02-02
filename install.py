@@ -22,7 +22,7 @@ class InstallGit():
     use_default = True
     def start():
         if InstallGit.ignore: return
-        os.system('ln -sf {}/gitconfig ~/.gitconfig >> log 2>&1'.format(BASE_DIR))
+        os.system('ln -sf {}/gitconfig ~/.gitconfig >> ~/.dotfiles/log 2>&1'.format(BASE_DIR))
         if not InstallGit.use_default:
             content = '[user]\n'
             content += '\temail = {}\n'.format(InstallGit.email)
@@ -38,7 +38,7 @@ class InstallTmux():
     ignore = False
     def start():
         if InstallTmux.ignore: return
-        os.system('ln -sf {}/tmux.conf ~/.tmux.conf >> log 2>&1'.format(BASE_DIR))
+        os.system('ln -sf {}/tmux.conf ~/.tmux.conf >> ~/.dotfiles/log 2>&1'.format(BASE_DIR))
 
     def installed():
         return pathExists('~/.tmux.conf')
@@ -48,9 +48,9 @@ class InstallVim():
     ignore = False
     def start():
         if InstallVim.ignore: return
-        os.system('ln -sf {}/vim ~/.vim >> log 2>&1'.format(BASE_DIR))
-        os.system('ln -sf {}/vim/vimrc ~/.vimrc >> log 2>&1'.format(BASE_DIR))
-        os.system('git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim >> log 2>&1')
+        os.system('ln -sf {}/vim ~/.vim >> ~/.dotfiles/log 2>&1'.format(BASE_DIR))
+        os.system('ln -sf {}/vim/vimrc ~/.vimrc >> ~/.dotfiles/log 2>&1'.format(BASE_DIR))
+        os.system('git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim >> ~/.dotfiles/log 2>&1')
         
     def installed():
         return pathExists('~/.vim')
@@ -60,9 +60,9 @@ class InstallPowerlineFont():
     ignore = False
     def start():
         if InstallPowerlineFont.ignore: return
-        os.system('rm -rf /tmp/fonts >> log 2>&1')
-        os.system('git clone https://github.com/powerline/fonts.git /tmp/fonts >> log 2>&1')
-        os.system('/tmp/fonts/install.sh >> log 2>&1')
+        os.system('rm -rf /tmp/fonts >> ~/.dotfiles/log 2>&1')
+        os.system('git clone https://github.com/powerline/fonts.git /tmp/fonts >> ~/.dotfiles/log 2>&1')
+        os.system('/tmp/fonts/install.sh >> ~/.dotfiles/log 2>&1')
 
     def installed():
         return pathExists('~/Library/Fonts') or pathExists('~/.local/share/fonts')
@@ -73,9 +73,9 @@ class InstallZsh():
     def start():
         if InstallZsh.ignore: return
 
-        os.system('wget 2>/dev/null --no-check-certificate http://install.ohmyz.sh -O - | sh >> log 2>&1')
-        os.system('rm ~/.zshrc >> log 2>&1')
-        os.system('ln -sf {}/zshrc ~/.zshrc >> log 2>&1'.format(BASE_DIR))
+        os.system('wget 2>/dev/null --no-check-certificate http://install.ohmyz.sh -O - | sh >> ~/.dotfiles/log 2>&1')
+        os.system('rm ~/.zshrc >> ~/.dotfiles/log 2>&1')
+        os.system('ln -sf {}/zshrc ~/.zshrc >> ~/.dotfiles/log 2>&1'.format(BASE_DIR))
 
     def installed():
         return pathExists('~/.zshrc')
@@ -175,7 +175,7 @@ class CustomInstallForm(npyscreen.FormBaseNew):
             self.listing.value = []
             self.listing.editable=False
             for i in range(num):
-                os.system('echo log > log')
+                os.system('echo log > ~/.dotfiles/log')
                 steps[i].start()
                 self.listing.value.append(i)
                 self.listing.values = list(map(lambda x:  CustomInstallForm.installed_symbol(x.installed()) + ' ' + x.name, steps))

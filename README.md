@@ -1,6 +1,6 @@
 # Install
-    cat <(curl -o - https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh) - | sh
-    cat <(wget -O - https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh) - | sh
+    curl -o /tmp/bootstrap.sh https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh && sh /tmp/bootstrap.sh
+    wget -O /tmp/bootstrap.sh https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh && sh /tmp/bootstrap.sh
 
 # Content
 including the following content
@@ -9,3 +9,6 @@ including the following content
 * zshrc
 * install oh-my-zsh
 * install powerline-fonts
+
+# note
+run :BundleInstall the first time you run vim
