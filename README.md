@@ -2,6 +2,10 @@
     curl -o /tmp/bootstrap.sh https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh && sh /tmp/bootstrap.sh
     wget -O /tmp/bootstrap.sh https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh && sh /tmp/bootstrap.sh
 
+# Update
+    cd ~/.dotfiles
+    git pull
+
 # Content
 including the following content
 * vimrc
