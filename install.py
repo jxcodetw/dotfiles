@@ -43,6 +43,16 @@ class InstallTmux():
     def installed():
         return pathExists('~/.tmux.conf')
 
+class InstallEmacs():
+    name = 'emacs'
+    ignore = False
+    def start():
+    	if InstallEmacs.ignore: return
+    	os.system('ln -sf {}/emacs ~/.emacs >> ~/.dotfiles/log 2>&1'.format(BASE_DIR))
+
+    def installed():
+    	return pathExists('~/.emacs')
+
 class InstallVim():
     name = 'vim'
     ignore = False
@@ -83,6 +93,7 @@ class InstallZsh():
 steps = []
 steps.append(InstallGit)
 steps.append(InstallTmux)
+steps.append(InstallEmacs)
 steps.append(InstallVim)
 steps.append(InstallZsh)
 steps.append(InstallPowerlineFont)
