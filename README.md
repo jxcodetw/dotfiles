@@ -8,6 +8,7 @@
 
 # Content
 including the following content
+* emacs(for aquamacs)
 * vimrc
 * tmux.conf
 * zshrc
