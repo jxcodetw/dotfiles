@@ -1,3 +1,5 @@
 [user]
 	email = jxcode.tw@gmail.com
 	name = jxcodetw1
+[core]
+	editor = vim

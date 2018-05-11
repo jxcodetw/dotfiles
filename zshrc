@@ -95,3 +95,5 @@ HISTSIZE=3000
 SAVEHIST=3000
 
 export PATH="$PATH:$HOME/.local/bin"
+export LC_ALL="en_US.UTF-8"
+alias code="rmate -p 52698 "

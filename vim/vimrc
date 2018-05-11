@@ -56,6 +56,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'neovimhaskell/haskell-vim'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 
 let g:lightline = { 'colorscheme': 'wombat',}
