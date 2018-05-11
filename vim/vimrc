@@ -13,14 +13,11 @@ set pastetoggle=<F5>
 set timeoutlen=1000 ttimeoutlen=0 " eliminating ESC delay
 set cursorline
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
-set t_Co=256 " 256 color
-colorscheme xoria256_modified
 let mapleader=","
 let maplocalleader=","
 cmap wt w !sudo tee % >/dev/null
 map <F1> :set nu!<CR>
 map <F2> :set list!<CR>
-syntax on
 
 " better search
 set hlsearch
@@ -57,6 +54,12 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tomasiser/vim-code-dark'
 call vundle#end()
+
+syntax on
+set t_Co=256 " 256 color
+colorscheme codedark
+hi Normal guibg=NONE ctermbg=NONE
 
 let g:lightline = { 'colorscheme': 'wombat',}
