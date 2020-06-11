@@ -1,6 +1,6 @@
 # Install
 ```bash
-$ git clone --recurse-submodules https://github.com/jxcodetw/dotfiles.git ~/dotfiles
+$ git clone --recursive https://github.com/jxcodetw/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
 $ ./install * # install all subdirs
 # or install configs separately
