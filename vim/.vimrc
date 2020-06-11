@@ -16,8 +16,6 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 let mapleader=","
 let maplocalleader=","
 cmap wt w !sudo tee % >/dev/null
-map <F1> :set nu!<CR>
-map <F2> :set list!<CR>
 
 " better search
 set hlsearch

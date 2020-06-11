@@ -1,19 +1,14 @@
 # Install
+```bash
+$ git clone https://github.com/jxcodetw/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles
+$ ./install.sh git tmux vim zsh # the name of the sub folders
+```
     curl -o /tmp/bootstrap.sh https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh && sh /tmp/bootstrap.sh
     wget -O /tmp/bootstrap.sh https://raw.githubusercontent.com/jxcodetw/dotfiles/master/bootstrap.sh && sh /tmp/bootstrap.sh
 
 # Update
-    cd ~/.dotfiles
-    git pull
-
-# Content
-including the following content
-* emacs(for aquamacs)
-* vimrc
-* tmux.conf
-* zshrc
-* install oh-my-zsh
-* install powerline-fonts
-
-# note
-run :BundleInstall the first time you run vim
+```bash
+$ cd ~/dotfiles
+$ git pull
+```
