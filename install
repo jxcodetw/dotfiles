@@ -8,6 +8,11 @@ fi
 
 # for each command line argument
 for module; do
+	# skip file
+	if [[ -f $module ]]; then
+		continue
+	fi
+
 	# check if subdir exist
 	if [[ ! -d $module ]]; then
 		echo "Module $module doesn't exist"
