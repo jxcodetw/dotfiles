@@ -50,7 +50,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'neovimhaskell/haskell-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomasiser/vim-code-dark'
 call vundle#end()
