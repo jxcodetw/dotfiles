@@ -12,3 +12,7 @@ $ ./install * # install all subdirs
 $ cd ~/dotfiles
 $ git pull
 ```
+
+# Note
+
+Please run :PluginInstall in vim
