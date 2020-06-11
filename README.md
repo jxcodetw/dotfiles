@@ -1,8 +1,8 @@
 # Install
 ```bash
-$ git clone https://github.com/jxcodetw/dotfiles.git ~/dotfiles
+$ git clone --recurse-submodules https://github.com/jxcodetw/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
-$ ./install.sh git tmux vim zsh # the name of the sub folders
+$ ./install git tmux vim zsh # the name of the subdirs
 ```
 
 # Update

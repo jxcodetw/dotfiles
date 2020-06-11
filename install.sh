@@ -1,3 +1,4 @@
+#!/bin/bash
 # check number of arguments
 if test "$#" -eq 0; then
 	me=`basename "$0"`
@@ -19,21 +20,21 @@ for module; do
 	# if any of the config is present then skip this one
 	installed=false
 	for file in $files; do
+		target="$HOME/$(basename -- $file)"
 		if [[ -f $target ]]; then
 			installed=true
 			break
 		fi
 	done
-	if [[ $installed ]]; then
-		echo Module $module skipped.
+	if $installed; then
+		echo -e "Module $module skipped."
 		continue
 	fi
 
 	# symlink them to $HOME
 	for file in $files; do
-		fullpath="$(readlink -f $file)"
 		target="$HOME/$(basename -- $file)"
-		ln -s $fullpath $target
+		ln -s $PWD/$file $target
 	done
-	echo $module installed.
+	echo Module $module installed.
 done
